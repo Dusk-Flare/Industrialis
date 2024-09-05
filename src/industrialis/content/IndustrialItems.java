@@ -28,7 +28,7 @@ public class IndustrialItems {
             cost = 1.9f;
         }};
 
-        copperRod = new Item("copper-rod", Color.valueOf("202020")){{
+        copperRod = new Item("copper-rod", Color.valueOf("db7e00")){{
             hardness = 1;
             cost = 1.5f;
         }};
@@ -43,7 +43,7 @@ public class IndustrialItems {
             cost = 2.3f;
         }};
 
-        mineralCoal = new Item("mineral-coal", Color.valueOf("ffb6b6")){{
+        mineralCoal = new Item("mineral-coal", Color.valueOf("0f0f0f")){{
             hardness = 1;
             cost = 1;
             flammability = 1f;
@@ -55,7 +55,7 @@ public class IndustrialItems {
             cost = 1;
         }};
 
-        scrappedMetal = new Item("scrapped-metal", Color.valueOf("ffb6b6")){{
+        scrappedMetal = new Item("scrapped-metal", Color.valueOf("111111")){{
             hardness = 1;
             cost = 0.5f;
         }};
@@ -88,7 +88,7 @@ public class IndustrialItems {
             cost = 1;
         }};
 
-        energyCell = new Item("energy-cell", Color.valueOf("0d0d0d")){{
+        lithium = new Item("lithium", Color.valueOf("daf5ff")){{
             cost= 1;
             flammability = 10f;
             charge = 10f;
