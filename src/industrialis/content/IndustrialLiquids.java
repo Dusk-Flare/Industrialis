@@ -22,9 +22,9 @@ public class IndustrialLiquids {
         heaterFluid = new Liquid("heater-fluid") {{
             temperature= 1;
             viscosity = 0.1f;
-            color = IndustrialPal.skyRed;
-            lightColor = IndustrialPal.skyRed;
-            barColor = IndustrialPal.skyRed;
+            color = Color.valueOf("800000");
+            lightColor = Color.valueOf("800000");
+            barColor = Color.valueOf("800000");
         }};
 
         hyperCoolant = new Liquid("hyper-coolant") {{

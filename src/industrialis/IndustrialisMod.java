@@ -3,6 +3,7 @@ package industrialis;
 import arc.*;
 import arc.util.*;
 import industrialis.content.*;
+import industrialis.content.blocks.*;
 import mindustry.content.Planets;
 import mindustry.game.EventType.*;
 import mindustry.game.Schematic;
@@ -20,5 +21,7 @@ public class IndustrialisMod extends Mod{
     public void loadContent(){
         IndustrialItems.load();
         IndustrialLiquids.load();
+        IndustrialUnits.load();
+        IndustrialBlocks.load();
     }
 }
