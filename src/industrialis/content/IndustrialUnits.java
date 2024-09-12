@@ -92,6 +92,28 @@ public class IndustrialUnits {
                     trailLength = 5;
                     trailWidth = 2.7f;
                     trailColor = Color.valueOf("800000");
+                    hitEffect = new MultiEffect(
+                        new ParticleEffect(){{
+                            paticles = 6;
+                            line = true;
+                            lifetime = 15;
+                            length = 15;
+                            lenFrom = 3;
+                            lenTo = 0;
+                            strokeFrom = 1;
+                            strokeTo = 0;
+                            colorFrom = Color.valueOf("800000");
+                            colorTo = Color.valueOf("600000");
+                        }}, 
+                        new WaveEffect(){{
+                            sizeFrom = 3;
+                            sizeTo = 10;
+                            lifetime = 15;
+                            strokeFrom = 3;
+                            strokeTo = 0;
+                            colorFrom = Color.valueOf("800000");
+                            colorTo = Color.valueOf("600000");
+                        }});
                 }};
             }});
         }};
