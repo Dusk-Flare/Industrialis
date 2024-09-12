@@ -94,7 +94,7 @@ public class IndustrialUnits {
                     trailColor = Color.valueOf("800000");
                     hitEffect = new MultiEffect(
                         new ParticleEffect(){{
-                            paticles = 6;
+                            particles = 6;
                             line = true;
                             lifetime = 15;
                             length = 15;
