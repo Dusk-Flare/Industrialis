@@ -66,7 +66,6 @@ public class IndustrialExtractors {
             itemCapacity = 100;
             tier = 7;
             drillTime = 75;
-            drawMineItem = true;
             drillEffectChance = 1;
             drawRim = true;
             heatColor = Color.valueOf("5ea1f2");
@@ -145,7 +144,7 @@ public class IndustrialExtractors {
             ));
         }};
 
-        steelDrill = new Drill("steel-dril"){{
+        steelDrill = new Drill("steel-drill"){{
             size = 3;
             health = 560;
             itemCapacity = 25;

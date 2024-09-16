@@ -8,5 +8,6 @@ public class IndustrialBlocks {
         IndustrialLogic.load();
         IndustrialTransport.load();
         IndustrialExtractors.load();
+        IndustrialAssembly.load();
     }
 }
