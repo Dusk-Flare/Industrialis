@@ -9,5 +9,6 @@ public class IndustrialBlocks {
         IndustrialTransport.load();
         IndustrialExtractors.load();
         IndustrialAssembly.load();
+        IndustrialSupport.load();
     }
 }
