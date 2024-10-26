@@ -10,5 +10,7 @@ public class IndustrialBlocks {
         IndustrialExtractors.load();
         IndustrialAssembly.load();
         IndustrialSupport.load();
+        IndustrialDefence.load();
+        IndustrialPower.load();
     }
 }
