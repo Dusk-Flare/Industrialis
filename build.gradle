@@ -98,6 +98,7 @@ configure(rootProject){
         // Use the entity generation annotation processor.
         compileOnly "com.github.GlennFolker.EntityAnno:entity:$entVersion"
         kapt "com.github.GlennFolker.EntityAnno:entity:$entVersion"
+        implementation "com.github.liplum:MultiCrafterLib:v1.7"
 
         // Depend on Mindustry/Arc classpath.
         compileOnly "${mindustry(':core')}"

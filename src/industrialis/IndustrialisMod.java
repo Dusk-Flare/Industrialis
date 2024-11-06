@@ -23,5 +23,6 @@ public class IndustrialisMod extends Mod{
         IndustrialLiquids.load();
         IndustrialUnits.load();
         IndustrialBlocks.load();
+        IndustrialEnv.load();
     }
 }
