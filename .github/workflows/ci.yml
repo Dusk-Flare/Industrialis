@@ -12,6 +12,8 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
       - name: Build mod artifact
         run: |
           chmod +x gradlew
@@ -19,5 +21,5 @@ jobs:
       - name: Upload built mod artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Industrialis (zipped)
-          path: build/libs/Industrialis.jar
+          name: ModTemplate (zipped)
+          path: build/libs/ModTemplate.jar
