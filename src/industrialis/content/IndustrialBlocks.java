@@ -7,6 +7,7 @@ public class IndustrialBlocks {
         IndustrialFluidTransport.load();
         IndustrialLogic.load();
         IndustrialTransport.load();
+        IndustrialProduction.load();
         IndustrialExtractors.load();
         IndustrialAssembly.load();
         IndustrialSupport.load();
