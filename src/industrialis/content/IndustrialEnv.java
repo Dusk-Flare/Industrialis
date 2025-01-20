@@ -5,10 +5,10 @@ import industrialis.content.enviromentals.vultarEnviroment.*;
 
 public class IndustrialEnv {
     public static void load() {
-        //Vultar-Region
         VultarOres.load();
         VultarTiles.load();
-        //Vultar-EndRegion
         IndustrialPlanets.load();
+        IndustrialSectorPresets.load();
+        VultarTechTree.load();
     }
 }

@@ -1,19 +1,15 @@
  package industrialis.content.enviromentals.vultarEnviroment;
 
- import industrialis.content.*;
- import mindustry.content.*;
- import mindustry.type.*;
- import mindustry.world.*;
- import mindustry.graphics.*;
- import mindustry.world.draw.*;
- import mindustry.world.meta.*;
- import mindustry.world.blocks.environment.*;
- import mindustry.entities.effect.*;
- import arc.graphics.gl.*;
- import arc.graphics.*;
- import arc.math.*;
-
- import static mindustry.type.ItemStack.*;
+ import arc.graphics.Color;
+ import industrialis.content.IndustrialItems;
+ import industrialis.content.IndustrialLiquids;
+ import mindustry.content.StatusEffects;
+ import mindustry.graphics.CacheLayer;
+ import mindustry.world.Block;
+ import mindustry.world.blocks.environment.Floor;
+ import mindustry.world.blocks.environment.Prop;
+ import mindustry.world.blocks.environment.StaticWall;
+ import mindustry.world.meta.Attribute;
 
  public class VultarTiles {
     public static Block
@@ -21,7 +17,7 @@
           redRockFloor, basaltFloor, moltenTinTile, moltenScrappedMetalTile, ancientPlates,
           ancientPlatesDamaged, moltenLeadTile, moltenIronTile, moltenGoldTile, moltenCopperTile,
           //walls
-          redRockwall, redRockWallLarge, basaltWall, BasaltWallLarge, ancientMetal,
+          redRockwall, redRockWallLarge, basaltWall, basaltWallLarge, ancientMetal, ancientMetalLarge,
           //decor
           redRockyBoulder, basaltRockyBoulder;
     public static void load() {

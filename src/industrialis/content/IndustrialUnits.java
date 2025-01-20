@@ -1,47 +1,28 @@
 package industrialis.content;
 
-import industrialis.content.*;
-import mindustry.content.*;
-import mindustry.content.Fx.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.draw.*;
-import mindustry.world.meta.*;
-import mindustry.entities.effect.*;
-import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.math.*;
-import arc.math.geom.*;
-import arc.struct.*;
-import arc.util.*;
-import mindustry.ai.*;
-import mindustry.ai.types.*;
-import mindustry.entities.*;
-import mindustry.entities.abilities.*;
-import mindustry.entities.bullet.*;
-import mindustry.entities.effect.*;
-import mindustry.entities.part.*;
-import mindustry.entities.pattern.*;
-import mindustry.gen.*;
-import mindustry.graphics.*;
-import mindustry.type.*;
-import mindustry.type.ammo.*;
-import mindustry.type.unit.*;
-import mindustry.type.weapons.*;
-import mindustry.world.meta.*;
-
-import static arc.graphics.g2d.Draw.*;
-import static arc.graphics.g2d.Lines.*;
-import static arc.math.Angles.*;
-import static mindustry.Vars.*;
-import static mindustry.type.ItemStack.*;
+import arc.graphics.Color;
+import mindustry.ai.types.BuilderAI;
+import mindustry.content.StatusEffects;
+import mindustry.entities.bullet.BasicBulletType;
+import mindustry.entities.bullet.BulletType;
+import mindustry.entities.bullet.FlakBulletType;
+import mindustry.entities.effect.MultiEffect;
+import mindustry.entities.effect.ParticleEffect;
+import mindustry.entities.effect.WaveEffect;
+import mindustry.gen.LegsUnit;
+import mindustry.gen.MechUnit;
+import mindustry.gen.UnitEntity;
+import mindustry.gen.UnitWaterMove;
+import mindustry.type.UnitType;
+import mindustry.type.Weapon;
+import mindustry.type.weapons.RepairBeamWeapon;
 
 public class IndustrialUnits {
     public static UnitType
             //t1
     forger, disassembler, welder, moltenDrift,
             //t2
-    disruptor, ionizer;
+    reactance, disruptor, ionizer;
             //t3
 
             //t4
@@ -439,6 +420,104 @@ public class IndustrialUnits {
                                 colorFrom = Color.valueOf("800000");
                                 colorTo = Color.valueOf("600000");
                             }});
+                }};
+            }});
+        }};
+
+        reactance = new UnitType("reactance"){{
+            constructor = UnitEntity::create;
+            coreUnitDock = true;
+            controller = u -> new BuilderAI(false, 500f);
+            lowAltitude = false;
+            speed = 5;
+            accel = 0.08f;
+            drag = 0.03f;
+            flying = true;
+            health = 120;
+            hitSize = 9;
+            armor = 2;
+            itemCapacity = 20;
+            outlineColor = Color.valueOf("070707");
+            outlineRadius = 1;
+            engineOffset = 7.5f;
+            engineSize = 3.4f;
+            faceTarget = true;
+            mineTier = 3;
+            mineSpeed = 7;
+            buildSpeed = 7;
+            buildBeamOffset = 5;
+
+            setEnginesMirror(new UnitEngine(2.25f, -4.25f, 3.7f, 45f));
+            weapons.add(new Weapon("reactance-gun"){{
+                x = 3.5f;
+                y = 6;
+                top = false;
+                rotate = false;
+                mirror = true;
+                reload = 45;
+                recoil = 4;
+                bullet = new BasicBulletType(2.5f, 13){{
+                    buildingDamageMultiplier = 0.4f;
+                    speed = 4;
+                    lifetime = 40;
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceCap = 4;
+                    width = 9;
+                    height = 20;
+                    frontColor = Color.valueOf("800000");
+                    backColor = Color.valueOf("600000");
+                    despawnHit = true;
+                    trailChance = 0.7f;
+                    trailLength = 5;
+                    trailWidth = 2.7f;
+                    trailColor = Color.valueOf("800000");
+                    hitEffect = new MultiEffect(
+                            new ParticleEffect(){{
+                                particles = 6;
+                                line = true;
+                                lifetime = 15;
+                                length = 15;
+                                lenFrom = 3;
+                                lenTo = 0;
+                                strokeFrom = 1;
+                                strokeTo = 0;
+                                colorFrom = Color.valueOf("800000");
+                                colorTo = Color.valueOf("600000");
+                            }},
+                            new WaveEffect(){{
+                                sizeFrom = 3;
+                                sizeTo = 10;
+                                lifetime = 15;
+                                strokeFrom = 3;
+                                strokeTo = 0;
+                                colorFrom = Color.valueOf("800000");
+                                colorTo = Color.valueOf("600000");
+                            }});
+                }};
+            }});
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
+                reload = 20f;
+                x = 0;
+                y = 1f;
+                rotate = false;
+                shootY = 0f;
+                beamWidth = 0.42f;
+                aimDst = 0f;
+                shootCone = 40f;
+                mirror = true;
+                repairSpeed = 3.6f / 2f;
+                fractionRepairSpeed = 0.03f;
+                targetUnits = true;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Color.valueOf("6f0000");
+                healColor = Color.valueOf("6f0000");
+
+                bullet = new BulletType(){{
+                    maxRange = 65f;
                 }};
             }});
         }};

@@ -1,26 +1,26 @@
 package industrialis.content.blocks;
 
-import multicraft.*;
-import industrialis.content.*;
-import mindustry.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
+import arc.graphics.Blending;
+import arc.graphics.Color;
+import arc.struct.Seq;
+import industrialis.content.IndustrialItems;
+import industrialis.content.IndustrialLiquids;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.type.LiquidStack;
+import mindustry.world.Block;
+import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.draw.*;
-import mindustry.world.meta.*;
-import mindustry.world.consumers.*;
-import mindustry.world.blocks.production.*;
-import mindustry.world.blocks.sandbox.*;
-import mindustry.entities.effect.*;
-import arc.graphics.*;
-import arc.struct.*;
-import arc.math.*;
+import multicraft.IOEntry;
+import multicraft.MultiCrafter;
+import multicraft.Recipe;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 
 public class IndustrialProduction {
     public static Block
-            steelForge, smelter, obsidianKlin, mold, metalScrapper, copperInfuser;
+            steelForge, smelter, obsidianKiln, mold, metalScrapper, copperInfuser;
 
     public static void load() {
 
@@ -29,6 +29,7 @@ public class IndustrialProduction {
             size = 2;
             craftTime = 60;
             consumePower(0.5f);
+            outputItem = new ItemStack(IndustrialItems.steel, 1);
             consumeItems(with(IndustrialItems.iron, 2, IndustrialItems.mineralCoal, 1));
             drawer = new DrawMulti(
                     new DrawDefault(),
@@ -277,7 +278,7 @@ public class IndustrialProduction {
             requirements(Category.crafting, with(IndustrialItems.steel, 25, IndustrialItems.tin, 10, IndustrialItems.gold, 1));
         }};
 
-        obsidianKlin = new GenericCrafter("obsidian-klin"){{
+        obsidianKiln = new GenericCrafter("obsidian-kiln"){{
             health = 300;
             size = 2;
             craftTime = 30;

@@ -1,27 +1,19 @@
 package industrialis.content.blocks;
 
-import industrialis.content.*;
-import mindustry.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.draw.*;
-import mindustry.world.meta.*;
-import mindustry.world.consumers.*;
-import mindustry.world.blocks.units.*;
-import mindustry.world.blocks.storage.*;
-import mindustry.world.blocks.payloads.*;
-import mindustry.world.blocks.sandbox.*;
-import mindustry.entities.effect.*;
-import arc.graphics.*;
-import arc.math.*;
+import industrialis.content.IndustrialItems;
+import industrialis.content.IndustrialUnits;
+import mindustry.type.Category;
+import mindustry.world.Block;
+import mindustry.world.blocks.storage.CoreBlock;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
+
 
 public class IndustrialSupport {
     //effect
     public static Block
             //Cores
-            metalicCore
+            metalicCore, industrialNexus
             //Shields
 
             //Storage
@@ -30,10 +22,10 @@ public class IndustrialSupport {
             ;
 
     public static void load() {
-
+        int BHEALTH = 6870;
         metalicCore = new CoreBlock("metalic-core"){{
             size = 3;
-            health = 6870;
+            health = BHEALTH;
             isFirstTier = true;
             absorbLasers = true;
             itemCapacity = 6000;
@@ -41,14 +33,24 @@ public class IndustrialSupport {
             squareSprite = false;
             alwaysUnlocked = true;
             unitType = IndustrialUnits.forger;
-            requirements(Category.effect, BuildVisibility.shown, 
-                with(
-                    IndustrialItems.steel, 2000, 
-                    IndustrialItems.iron, 1000, 
-                   IndustrialItems.tin, 1000, 
-                    IndustrialItems.gold, 500
-                )
-            );
+        }};
+
+        industrialNexus = new CoreBlock("industrial-nexus"){{
+           size = 5;
+           health = BHEALTH*2;
+           isFirstTier = false;
+           absorbLasers = true;
+           itemCapacity = 12000;
+           unitCapModifier = 30;
+           squareSprite = false;
+           unitType = IndustrialUnits.reactance;
+            requirements(Category.effect,
+                    with(
+                            IndustrialItems.steel, 2000,
+                            IndustrialItems.iron, 1000,
+                            IndustrialItems.tin, 1000,
+                            IndustrialItems.gold, 500
+                    ));
         }};
 
     }
