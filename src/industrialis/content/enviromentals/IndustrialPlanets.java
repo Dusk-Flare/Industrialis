@@ -42,18 +42,23 @@ public class IndustrialPlanets {
                 r.staticFog = true;
             };
             meshLoader = () -> new MultiMesh(
+                    new NoiseMesh(this, 7, 5, 0.933f, 1, 0.0001f, 0.0001f, 1,
+                            Color.valueOf("090909"), Color.valueOf("090909"), 1, 1, 1, 4),
 
-                    //dark basalt substrate
-                    new NoiseMesh(this, 27, 5, .933f, 1, .0001f, 3.75f, .1f,
-                            Color.valueOf("090909"), Color.valueOf("090909"),
-                            1, 1f, 1f, 4f),
+                    new NoiseMesh(this, 27, 6, 0.94f, 5, 0.9f, 0.65f, 1,
+                            Color.valueOf("111111"), Color.valueOf("2f0000"), 1, 1, 1.8f, 1),
 
-                    //basalt hills
-                    new NoiseMesh(this, 27, 4, .93f, 2, .0001f, 3.8f, .01f,
-                            Color.valueOf("101010"), Color.valueOf("101010"),
-                            1, 1f, 1f, 4f)
+                    new NoiseMesh(this, 27, 6, 0.895f, 5, 0.9f, 0.65f, 1.5f,
+                            Color.valueOf("2f0000"), Color.valueOf("2f0000"), 4, 1, 1.8f, 1),
+
+                    new NoiseMesh(this, 27, 6, 0.83f, 5, 0.9f, 0.65f, 2.2f,
+                            Color.valueOf("2f0000"), Color.valueOf("2f0000"), 4, 1, 0.7f, 1),
+
+                    new NoiseMesh(this, 27, 6, 0.74f, 5, 0.9f, 0.65f, 3.3f,
+                            Color.valueOf("600000"), Color.valueOf("600000"), 4, 1, 1.8f, 1)
             );
-            cloudMesh = new HexSkyMesh(this, 4, 2, .01f, 6, Color.valueOf("dd0000"), 4, 2, 2, .55f);
+            cloudMesh = new HexSkyMesh(this, 4, 2, .01f, 6,
+                    Color.valueOf("700000"), 4, 2, 2, .55f);
         }};
     }
 }
