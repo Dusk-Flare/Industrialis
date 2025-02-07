@@ -1,15 +1,7 @@
 package industrialis;
 
-import arc.*;
-import arc.util.*;
 import industrialis.content.*;
-import industrialis.content.blocks.*;
-import mindustry.content.Planets;
-import mindustry.game.EventType.*;
-import mindustry.game.Schematic;
-import mindustry.game.Schematics;
-import mindustry.mod.*;
-import mindustry.ui.dialogs.*;
+import mindustry.mod.Mod;
 
 public class IndustrialisMod extends Mod{
 

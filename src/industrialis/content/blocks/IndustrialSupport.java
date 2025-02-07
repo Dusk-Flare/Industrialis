@@ -32,7 +32,7 @@ public class IndustrialSupport {
             unitCapModifier = 15;
             squareSprite = false;
             alwaysUnlocked = true;
-            unitType = IndustrialUnits.forger;
+            unitType = IndustrialUnits.bolt;
         }};
 
         industrialNexus = new CoreBlock("industrial-nexus"){{

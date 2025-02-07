@@ -20,16 +20,40 @@ import mindustry.type.weapons.RepairBeamWeapon;
 public class IndustrialUnits {
     public static UnitType
             //t1
-    forger, disassembler, welder, moltenDrift,
+            bolt, disassembler, welder, moltenDrift,
             //t2
-    reactance, disruptor, ionizer;
+            forger, disruptor, ionizer,
             //t3
-
+            reactance;
             //t4
 
             //t5
 
     public static void load() {
+
+        bolt = new UnitType("bolt"){{
+            constructor = UnitEntity::create;
+            lowAltitude = true;
+            speed = 2.5f;
+            accel = 0.1f;
+            drag = 0.04f;
+            flying = true;
+            health = 300;
+            hitSize = 10;
+            armor = 1;
+            itemCapacity = 50;
+            outlineRadius = 0;
+            engineSize = 0;
+            faceTarget = true;
+            mineTier = 2;
+            mineSpeed = 5;
+            buildSpeed = 7;
+            buildBeamOffset = 5;
+            coreUnitDock = true;
+            targetable = false;
+            hittable = false;
+            setEnginesMirror(new UnitEngine(4f, -4.25f, 2.2f, 315f));
+        }};
 
         disassembler = new UnitType("disassembler"){{
             constructor = MechUnit::create;
@@ -64,7 +88,6 @@ public class IndustrialUnits {
                 reload = 60;
                 recoil = 2;
                 bullet = new FlakBulletType(2.5f, 9){{
-                    buildingDamageMultiplier = 0.03f;
                     speed = 4;
                     lifetime = 50;
                     inaccuracy = 1;
@@ -137,8 +160,7 @@ public class IndustrialUnits {
                 rotate = false;
                 reload = 60;
                 recoil = 2;
-                bullet = new FlakBulletType(2.5f, 9){{
-                    buildingDamageMultiplier = 0.03f;
+                bullet = new FlakBulletType(2.5f, 14){{
                     speed = 4;
                     lifetime = 50;
                     inaccuracy = 1;
@@ -188,7 +210,7 @@ public class IndustrialUnits {
                 reload = 45;
                 recoil = 4;
                 bullet = new BasicBulletType(2.5f, 13){{
-                    buildingDamageMultiplier = 0.03f;
+                    buildingDamageMultiplier = 0.1f;
                     speed = 4;
                     lifetime = 40;
                     pierce = true;
@@ -252,7 +274,6 @@ public class IndustrialUnits {
                 reload = 45;
                 recoil = 4;
                 bullet = new BasicBulletType(2.5f, 13){{
-                    buildingDamageMultiplier = 0.5f;
                     speed = 4;
                     lifetime = 40;
                     pierce = true;
@@ -318,7 +339,6 @@ public class IndustrialUnits {
                 reload = 45;
                 recoil = 4;
                 bullet = new BasicBulletType(2.5f, 13){{
-                    buildingDamageMultiplier = 0.3f;
                     speed = 4;
                     lifetime = 40;
                     pierce = true;
@@ -383,7 +403,6 @@ public class IndustrialUnits {
                 reload = 45;
                 recoil = 4;
                 bullet = new BasicBulletType(2.5f, 13){{
-                    buildingDamageMultiplier = 0.4f;
                     speed = 4;
                     lifetime = 40;
                     pierce = true;
@@ -439,7 +458,7 @@ public class IndustrialUnits {
             itemCapacity = 20;
             outlineColor = Color.valueOf("070707");
             outlineRadius = 1;
-            engineOffset = 7.5f;
+            engineOffset = 7.95f;
             engineSize = 3.4f;
             faceTarget = true;
             mineTier = 3;
@@ -447,55 +466,7 @@ public class IndustrialUnits {
             buildSpeed = 7;
             buildBeamOffset = 5;
 
-            setEnginesMirror(new UnitEngine(2.25f, -4.25f, 3.7f, 45f));
-            weapons.add(new Weapon("reactance-gun"){{
-                x = 3.5f;
-                y = 6;
-                top = false;
-                rotate = false;
-                mirror = true;
-                reload = 45;
-                recoil = 4;
-                bullet = new BasicBulletType(2.5f, 13){{
-                    buildingDamageMultiplier = 0.4f;
-                    speed = 4;
-                    lifetime = 40;
-                    pierce = true;
-                    pierceBuilding = true;
-                    pierceCap = 4;
-                    width = 9;
-                    height = 20;
-                    frontColor = Color.valueOf("800000");
-                    backColor = Color.valueOf("600000");
-                    despawnHit = true;
-                    trailChance = 0.7f;
-                    trailLength = 5;
-                    trailWidth = 2.7f;
-                    trailColor = Color.valueOf("800000");
-                    hitEffect = new MultiEffect(
-                            new ParticleEffect(){{
-                                particles = 6;
-                                line = true;
-                                lifetime = 15;
-                                length = 15;
-                                lenFrom = 3;
-                                lenTo = 0;
-                                strokeFrom = 1;
-                                strokeTo = 0;
-                                colorFrom = Color.valueOf("800000");
-                                colorTo = Color.valueOf("600000");
-                            }},
-                            new WaveEffect(){{
-                                sizeFrom = 3;
-                                sizeTo = 10;
-                                lifetime = 15;
-                                strokeFrom = 3;
-                                strokeTo = 0;
-                                colorFrom = Color.valueOf("800000");
-                                colorTo = Color.valueOf("600000");
-                            }});
-                }};
-            }});
+            setEnginesMirror(new UnitEngine(2.25f, -7.95f, 3.7f, 45f));
             weapons.add(new RepairBeamWeapon(){{
                 widthSinMag = 0.11f;
                 reload = 20f;

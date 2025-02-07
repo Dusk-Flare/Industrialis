@@ -53,7 +53,6 @@ public class VultarTechTree {
             });
             //Resource-Extraction
             node(ironDrill, () -> {
-                node(greenhouse);
                 node(steelDrill, () -> {
                     node(steelBore, () -> {
                         node(hyperDrill);

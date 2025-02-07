@@ -1,6 +1,5 @@
 package industrialis.content.enviromentals;
 
-import mindustry.maps.generators.BlankPlanetGenerator;
 import mindustry.type.SectorPreset;
 
 public class IndustrialSectorPresets {
@@ -12,6 +11,8 @@ public class IndustrialSectorPresets {
         moltenValley = new SectorPreset("molten-valley", IndustrialPlanets.vultar, 0) {{
             alwaysUnlocked = true;
             addStartingItems = true;
+            captureWave = 6;
+            difficulty = 1;
             overrideLaunchDefaults = true;
             noLighting = true;
         }};

@@ -67,8 +67,9 @@ public class IndustrialItems {
 
         //T2
         basalt = new Item("basalt", Color.valueOf("202020")){{
+            lowPriority = true;
             hardness = 1;
-            cost = 1;
+            cost = 0.2f;
         }};
 
         basalticConcrete = new Item("basaltic-concrete", Color.valueOf("101010")){{
@@ -92,12 +93,6 @@ public class IndustrialItems {
             cost= 1;
             flammability = 10f;
             charge = 10f;
-        }};
-
-        plantMatter = new Item("plant-matter", Color.valueOf("164500")){{
-            hardness = 1;
-            flammability = 0.6f;
-            cost = 1;
         }};
 
         //t3

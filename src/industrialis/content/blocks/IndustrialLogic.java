@@ -1,18 +1,17 @@
 package industrialis.content.blocks;
 
-import industrialis.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.meta.*;
-import mindustry.world.consumers.*;
+import industrialis.content.IndustrialItems;
+import industrialis.content.IndustrialLiquids;
+import mindustry.type.Category;
+import mindustry.world.Block;
 import mindustry.world.blocks.logic.*;
-import mindustry.world.blocks.sandbox.*;
+import mindustry.world.meta.BuildVisibility;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class IndustrialLogic {
     public static Block
-            cpu, codeAssembler, serverCompiler, logicMemory, database, interfacing,
+            cpu, codeAssembler, serverCompiler, logicMemory, database, interfacing, messageBoard,
             largeInterface, button, worldCpu, worldLogicMemory, worldMessageBoard;
 
     public static void load() {
@@ -87,6 +86,17 @@ public class IndustrialLogic {
             ));
         }};
 
+        messageBoard = new MessageBlock("message-board") {{
+            health = 200;
+            forceDark = true;
+
+            requirements(Category.logic, with(
+                    IndustrialItems.steel, 6,
+                    IndustrialItems.leadedCopper, 5,
+                    IndustrialItems.gold, 5
+            ));
+        }};
+
         largeInterface = new LogicDisplay("large-interface") {{
             health = 2800;
             size = 6;
@@ -111,7 +121,6 @@ public class IndustrialLogic {
 
         worldCpu = new LogicBlock("world-CPU") {{
             health = 200;
-            range = 160;
             canOverdrive = false;
             targetable = false;
             instructionsPerTick = 9999;

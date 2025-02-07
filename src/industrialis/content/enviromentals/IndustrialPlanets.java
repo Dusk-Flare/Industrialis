@@ -8,6 +8,8 @@ import mindustry.graphics.g3d.*;
 import mindustry.maps.generators.BlankPlanetGenerator;
 import mindustry.type.Planet;
 
+import static industrialis.content.enviromentals.vultarEnviroment.VultarPal.*;
+
 public class IndustrialPlanets {
     public static Planet
             vultar;
@@ -40,22 +42,23 @@ public class IndustrialPlanets {
             ruleSetter = r -> {
                 r.fog = true;
                 r.staticFog = true;
+                //r.defaultTeam = IndustrialTeams.technocrats;
             };
             meshLoader = () -> new MultiMesh(
                     new NoiseMesh(this, 7, 5, 0.933f, 1, 0.0001f, 0.0001f, 1,
-                            Color.valueOf("090909"), Color.valueOf("090909"), 1, 1, 1, 4),
+                            darkGray, darkGray, 1, 1, 1, 4),
 
                     new NoiseMesh(this, 27, 6, 0.94f, 5, 0.9f, 0.65f, 1,
-                            Color.valueOf("111111"), Color.valueOf("2f0000"), 1, 1, 1.8f, 1),
+                            med2Gray, darkRed, 1, 1, 1.8f, 1),
 
                     new NoiseMesh(this, 27, 6, 0.895f, 5, 0.9f, 0.65f, 1.5f,
-                            Color.valueOf("2f0000"), Color.valueOf("2f0000"), 4, 1, 1.8f, 1),
+                            darkRed, medRed, 4, 1, 1.8f, 1),
 
                     new NoiseMesh(this, 27, 6, 0.83f, 5, 0.9f, 0.65f, 2.2f,
-                            Color.valueOf("2f0000"), Color.valueOf("2f0000"), 4, 1, 0.7f, 1),
+                            medRed, medRed, 4, 1, 0.7f, 1),
 
                     new NoiseMesh(this, 27, 6, 0.74f, 5, 0.9f, 0.65f, 3.3f,
-                            Color.valueOf("600000"), Color.valueOf("600000"), 4, 1, 1.8f, 1)
+                            lightRed, lightRed, 4, 1, 1.8f, 1)
             );
             cloudMesh = new HexSkyMesh(this, 4, 2, .01f, 6,
                     Color.valueOf("700000"), 4, 2, 2, .55f);

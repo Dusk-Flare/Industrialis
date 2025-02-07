@@ -1,64 +1,21 @@
 package industrialis.content.blocks;
 
-import industrialis.content.*;
-import mindustry.content.*;
-import mindustry.type.*;
-import mindustry.world.*;
-import mindustry.world.draw.*;
-import mindustry.world.meta.*;
-import mindustry.world.consumers.*;
-import mindustry.world.blocks.production.*;
-import mindustry.world.blocks.sandbox.*;
-import mindustry.entities.effect.*;
-import arc.graphics.*;
-import arc.math.*;
+import arc.graphics.Color;
+import arc.math.Interp;
+import industrialis.content.IndustrialItems;
+import industrialis.content.IndustrialLiquids;
+import mindustry.entities.effect.ParticleEffect;
+import mindustry.type.Category;
+import mindustry.world.Block;
+import mindustry.world.blocks.production.Drill;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class IndustrialExtractors {
     public static Block
-            greenhouse, hyperDrill, ironDrill, steelBore, steelDrill;
+            hyperDrill, ironDrill, steelBore, steelDrill;
 
     public static void load() {
-
-        greenhouse = new GenericCrafter("greenhouse") {{
-            size = 3;
-            health = 350;
-            hasItems = true;
-            hasPower = true;
-            hasLiquids = true;
-            consumeLiquid(Liquids.water, 1f);
-            consumePower(1.2f);
-            outputItem = new ItemStack(IndustrialItems.plantMatter, 1);
-
-            drawer = new DrawMulti(
-                    new DrawDefault(),
-                    new DrawRegion("-bottom"),
-                    new DrawGlowRegion("-glow"){{
-                        alpha = 0.7f;
-                        color = Color.valueOf("000f00");
-                        glowIntensity = 0.3f;
-                        glowScale = 8f;
-                    }},
-                    new DrawParticles() {{
-                        color = Color.valueOf("000f00");
-                        alpha = 0.4f;
-                        reverse = true;
-                        blending = Blending.additive;
-                        particleRad = 8;
-                        particles = 16;
-                        fadeMargin = 1;
-                        rotateScl = 7;
-                        particleLife = 120;
-                    }}
-                    );
-
-            requirements(Category.production, with(
-                    IndustrialItems.steel, 35,
-                    IndustrialItems.leadedCopper, 30,
-                    IndustrialItems.gold, 3
-            ));
-        }};
 
         hyperDrill = new Drill("hyper-drill"){{
             size = 5;
