@@ -22,6 +22,7 @@ public class IndustrialFluidTransport {
             health = 250;
             junctionReplacement = metalurgicLiquidJunction;
             bridgeReplacement = metalurgicLiquidBridge;
+            padCorners = false;
 
             requirements(Category.liquid, with(IndustrialItems.steel, 1, IndustrialItems.obsidian, 1));
         }};
@@ -46,12 +47,14 @@ public class IndustrialFluidTransport {
 
         metalurgicPump = new Pump("metalurgic-pump") {{
             size = 2;
+            squareSprite = false;
             consumePower(0.50f);
             requirements(Category.liquid, with(IndustrialItems.steel, 37, IndustrialItems.obsidian, 5, IndustrialItems.gold, 10));
         }};
 
         hexPump = new Pump("hex-pump") {{
             size = 3;
+            squareSprite = false;
             consumePower(1.50f);
             requirements(Category.liquid, with(IndustrialItems.steel, 37, IndustrialItems.obsidian, 5, IndustrialItems.gold, 10));
         }};
