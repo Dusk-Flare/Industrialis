@@ -18,12 +18,12 @@
  public class VultarTiles {
     public static Block
           //floors
-          redRockFloor, basaltFloor, moltenTinTile, moltenScrappedMetalTile, ancientPlates,
+          redRockFloor, basaltFloor, darkBasaltFloor, moltenTinTile, moltenScrappedMetalTile, ancientPlates,
           ancientPlatesDamaged, moltenLeadTile, moltenIronTile, moltenGoldTile, moltenCopperTile,
           //walls
-          redRockwall, redRockWallLarge, basaltWall, BasaltWallLarge, ancientMetal,
+          redRockwall, redRockWallLarge, basaltWall, darkBasaltWall, ancientMetal,
           //decor
-          redRockyBoulder, basaltRockyBoulder;
+          redRockyBoulder, basaltRockyBoulder, darkBasaltRockyBoulder;
     public static void load() {
 
      //Floor-Region
@@ -35,6 +35,12 @@
        itemDrop = IndustrialItems.basalt;
        playerUnmineable = true;
        variants = 3;
+     }};
+
+     darkBasaltFloor = new Floor("dark-basalt-floor"){{
+      itemDrop = IndustrialItems.basalt;
+      playerUnmineable = true;
+      variants = 3;
      }};
 
      ancientPlates = new Floor("ancient-plates"){{
@@ -147,6 +153,11 @@
       variants = 2;
      }};
 
+     darkBasaltWall = new StaticWall("dark-basalt-wall"){{
+      darkBasaltFloor.asFloor().wall = this;
+      variants = 2;
+     }};
+
      ancientMetal = new StaticWall("ancient-metal"){{
       ancientPlates.asFloor().wall = ancientPlatesDamaged.asFloor().wall = this;
       variants = 2;
@@ -160,6 +171,11 @@
      }};
 
      basaltRockyBoulder = new Prop("basaltic-rocky-boulder"){{
+      variants = 2;
+      basaltFloor.asFloor().decoration = this;
+     }};
+
+     darkBasaltRockyBoulder = new Prop("dark-basaltic-rocky-boulder"){{
       variants = 2;
       basaltFloor.asFloor().decoration = this;
      }};

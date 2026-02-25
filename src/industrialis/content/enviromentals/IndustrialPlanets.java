@@ -17,6 +17,9 @@ public class IndustrialPlanets {
 
     public static void load() {
         vultar = new Planet("vultar", Planets.sun, 1f, 1) {{
+            //i need help plz
+            //TODO
+            //generator = new VultarPlanetGenerator();
             iconColor = Color.valueOf("dd0000");
             accessible = true;
             defaultCore = IndustrialSupport.metalicCore;
@@ -43,33 +46,6 @@ public class IndustrialPlanets {
                 r.staticFog = true;
             };
             itemWhitelist = IndustrialItems.vultarItems;
-            meshLoader = () -> new MultiMesh(
-
-                    //NoiseMesh(Planet planet, int seed, int divisions, float radius,
-                    // int octaves, float persistence, float scale, float mag,
-                    // Color color1, Color color2, int coct, float cper, float cscl,
-                    // float cthresh),
-
-                    new NoiseMesh(this, 27, 5, .933f, 2, .0001f, 3.75f, .1f,
-                            Color.valueOf("090909"), Color.valueOf("090909"),
-                            1, 1f, 1f, 4f),
-
-                    new NoiseMesh(this, 27, 6, .94f, 3, .9f, 1.75f, .165f,
-                            Color.valueOf("111111"), Color.valueOf("2f0000"),
-                            1, 1f, 1.8f, 1f),
-
-                    new NoiseMesh(this, 27, 6, .895f, 4, .9f, .75f, .965f,
-                            Color.valueOf("2f0000"), Color.valueOf("2f0000"),
-                            4, 1f, 1.8f, 1f),
-
-                    new NoiseMesh(this, 27, 6, .86f, 4, .9f, .74f, 1.65f,
-                            Color.valueOf("2f0000"), Color.valueOf("2f0000"),
-                            4, 1f, .7f, 1f),
-
-                    new NoiseMesh(this, 27, 6, .74f, 4, .9f, 1.45f, 1.65f,
-                            Color.valueOf("600000"), Color.valueOf("600000"),
-                            4, 1f, 1.8f, 1f)
-            );
             cloudMesh = new HexSkyMesh(this, 4, 2, .01f, 6, Color.valueOf("dd0000"), 4, 2, 2, .55f);
         }};
     }
